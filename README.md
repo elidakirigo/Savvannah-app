@@ -1,3 +1,8 @@
+[![NextApp deploy](https://github.com/elidakirigo/Savvannah-app/actions/workflows/node.yml/badge.svg?branch=main&event=push)](https://github.com/elidakirigo/Savvannah-app/actions/workflows/node.yml)
+
+---
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
