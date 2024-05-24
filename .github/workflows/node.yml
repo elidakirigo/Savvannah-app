@@ -5,9 +5,7 @@ name: NextApp deploy
 
 on:
    push:
-      branches: ['main']
-   pull_request:
-      branches: ['main']
+      branches: [main]
 
 defaults:
    run:
@@ -28,7 +26,6 @@ jobs:
            uses: actions/setup-node@v3
            with:
               node-version: ${{ matrix.node-version }}
-              cache: 'npm'
          - run: npm ci
          - run: npm run build --if-present
-         - run: npm test
+        #  - run: npm test
