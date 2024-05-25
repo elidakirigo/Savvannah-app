@@ -1,8 +1,9 @@
-import React from 'react'
+'use client'
 
 export default function page() {
-	fetch('https://jsonplaceholder.typicode.com/todos/1')
-		.then((response) => response.json())
-		.then((json) => console.log(json))
-	return <div>hello</div>
+	// fetch(process.env.NEXT_PUBLIC_URL + '/photos')
+	// 	.then((response) => response.json())
+		// .then((json) => console.log(json))
+
+	return <div className="h-screen">hello</div>
 }
