@@ -28,13 +28,7 @@ const Navbar = () => {
 						</Link>
 						<Link href={'/home'} className=' text-white p-3 mx-auto'>
 							User
-						</Link>
-						<Link href={'/home'} className=' text-white p-3 mx-auto'>
-							Album
-						</Link>
-						<Link href={'/home'} className=' text-white p-3 mx-auto'>
-							Photos
-						</Link>
+						</Link> 
 						<button onClick={() => signOut()}>signOut</button>
 					</div>
 				</>

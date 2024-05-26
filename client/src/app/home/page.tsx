@@ -1,27 +1,15 @@
 'use client'
 
 import { useSession } from 'next-auth/react'
-import React, { useEffect, useState } from 'react'
-import Login from '../landingPage/Login'
-import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import { useUserAlbum } from '../../../Hooks/useUlbums'
 
 const Page = () => {
 	const { data: session } = useSession()
 	const router = useRouter()
-	const [user, setUser] = useState([])
-	const [albums, setAlbums] = useState([])
 
-	useEffect(() => {
-		const UserData = async () => {
-			const { data: user } = await axios.get(process.env.NEXT_PUBLIC_URL + '/users')
-			const { data: album } = await axios.get(process.env.NEXT_PUBLIC_URL + '/albums')
-			setUser(user)
-			setAlbums(album)
-		}
-
-		UserData()
-	}, [])
+	const { allUserdata } = useUserAlbum()
+	console.log(allUserdata)
 
 	if (!session) return router.replace('/')
 
@@ -34,7 +22,7 @@ const Page = () => {
 							Name
 						</th>
 						<th scope='col' className='px-6 py-3 bg-gray-50 dark:bg-gray-800'>
-						User ID
+							User ID
 						</th>
 						<th scope='col' className='px-6 py-3'>
 							No of Albums
@@ -45,20 +33,18 @@ const Page = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{user.map(({ id, name, email }) => (
+					{allUserdata.map(({ id, name, email, noOfAlbums }) => (
 						<tr className='border-b border-gray-200 dark:border-gray-700 cursor-pointer' onClick={() => router.replace('/user/' + id)}>
 							<th scope='row' className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800 hover:bg-slate-300'>
 								{name}
 							</th>
 							<td className='px-6 py-4 '>{id}</td>
-							<td className='px-6 py-4 bg-gray-50 dark:bg-gray-800 '>Laptop</td>
+							<td className='px-6 py-4 bg-gray-50 dark:bg-gray-800 '>{noOfAlbums}</td>
 							<td className='px-6 py-4'>{email}</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
-
-			{JSON.stringify(albums)}
 		</div>
 	)
 }
