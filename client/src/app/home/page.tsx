@@ -6,7 +6,7 @@ import Login from '../landingPage/Login'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
-const page = () => {
+const Page = () => {
 	const { data: session } = useSession()
 	const router = useRouter()
 	const [user, setUser] = useState([])
@@ -63,4 +63,4 @@ const page = () => {
 	)
 }
 
-export default page
+export default Page
