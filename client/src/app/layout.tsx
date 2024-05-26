@@ -2,8 +2,11 @@ import { getServerSession } from 'next-auth'
 import { SessionProvider } from '../../components/SessionProvider'
 import './globals.css'
 import { authOptions } from './api/auth/[...nextauth]/route'
-import Login from '../../components/Login'
-// import ClientProvider from '../../components/ClientProvider'
+import { Poppins } from 'next/font/google'
+import ClientProvider from '../../components/ClientProvider'
+import Navbar from '../../components/navbar'
+
+const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
 export const metadata = {
 	title: 'Savannah App',
@@ -14,20 +17,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	const session = await getServerSession(authOptions)
 	return (
 		<html lang='en'>
-			<body>
+			<body className={poppins.className}>
 				<SessionProvider session={session}>
-					{!session ? (
-						<Login />
-					) : (
-						<div className='flex'>
+					<Navbar />
 
-							{/* ClientProvider - Notification */}
-							{/* <ClientProvider/> */}
-
-							<div className='bg-[#343541] flex-1'>{children}</div>
-						</div>
-					 )} 
-				</SessionProvider> 
+					{/* ClientProvider - Notification */}
+					<ClientProvider />
+					{children}
+				</SessionProvider>
 			</body>
 		</html>
 	)
