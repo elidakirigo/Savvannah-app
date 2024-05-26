@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import Login from './Login'
 
-function page() {
+function Page() {
 	const { data: session } = useSession()
 	const router = useRouter()
 
@@ -14,4 +14,4 @@ function page() {
 	)
 }
 
-export default page
+export default Page
