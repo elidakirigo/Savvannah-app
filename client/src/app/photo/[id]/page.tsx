@@ -1,11 +1,11 @@
 type Props = {
-	params: {
-		id: string
-	}
-}
+  params: {
+    id: string;
+  };
+};
 
 const Page = ({ params: { id } }: Props) => {
-	return <div>photo {id}</div>
-}
+  return <div>photo {id}</div>;
+};
 
-export default Page
+export default Page;
