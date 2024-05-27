@@ -25,6 +25,7 @@ const Page = ({ params: { id } }: Props) => {
   const updateBtn = () => {
     setEdit(false);
   };
+  
   return (
     <div className="flex p-5 items-center gap-4 flex-col">
       <div className="max-w-[400px]">

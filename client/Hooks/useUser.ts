@@ -1,22 +1,39 @@
-"use client";
+'use client'
 
-import axios from "axios";
-import { useEffect, useState } from "react";
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { Bounce, ToastContainer, toast } from 'react-toastify'
 
 export const useUser = () => {
-  const [user, setUser] = useState([]);
+	const [user, setUser] = useState([])
 
-  useEffect(() => {
-    // console.log(process.env.REACT_APP_URL)
-    const fetchUser = async () => {
-      const { data: users } = await axios.get(
-        process.env.NEXT_PUBLIC_URL + "/users",
-      );
-      setUser(users);
-    };
+	useEffect(() => {
+		
+		const fetchUser = async () => {
+			const { data: users } = await toast.promise(
+				axios.get(process.env.NEXT_PUBLIC_URL + '/users'),
+				{
+					pending: 'loading users ',
+					success: 'user loaded successfully',
+					error: 'No user found ',
+				},
+				{
+					position: 'top-center',
+					autoClose: 3000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: 'light',
+					transition: Bounce,
+				},
+			)
+			setUser(users)
+		}
 
-    fetchUser();
-  }, []);
+		fetchUser()
+	}, [])
 
-  return user;
-};
+	return user
+}

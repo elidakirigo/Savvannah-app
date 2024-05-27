@@ -3,15 +3,32 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useUser } from "./useUser";
+import { Bounce, ToastContainer, toast } from 'react-toastify'
 
 export const useAlbums = () => {
   const [album, setAlbum] = useState([]);
 
   useEffect(() => {
     const fetchAlbums = async () => {
-      const { data: albums } = await axios.get(
-        process.env.NEXT_PUBLIC_URL + "/albums",
-      );
+      const { data: albums } = await toast.promise(
+			axios.get(process.env.NEXT_PUBLIC_URL + '/albums'),
+			{
+				pending: 'loading albums ',
+				success: 'Albums loaded successfully',
+				error: 'No Albums found ',
+			},
+			{
+				position: 'top-center',
+				autoClose: 3000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: 'light',
+				transition: Bounce,
+			},
+		)
       setAlbum(albums);
     };
 

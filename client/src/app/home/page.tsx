@@ -10,7 +10,7 @@ const Page = () => {
 
   const { allUserdata } = useUserAlbum();
 
-  if (!session) return router.replace("/");
+  // if (!session) return router.push("/");
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg max-w-[1000px] m-5 ">
@@ -35,7 +35,7 @@ const Page = () => {
           {allUserdata.map(({ id, name, email, noOfAlbums }) => (
             <tr
               className="border-b border-gray-200 dark:border-gray-700 cursor-pointer"
-              onClick={() => router.replace("/user/" + id)}
+              onClick={() => router.push("/user/" + id)}
               key={id}
             >
               <th
