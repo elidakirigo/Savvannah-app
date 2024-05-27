@@ -14,9 +14,9 @@ const Navbar = () => {
 					<Link href={'/'} className=' text-white p-3 mx-auto'>
 						Savannah App
 					</Link>
-					<Link href={'/login'} className=' text-white p-3 mx-auto'>
+					{/* <Link href={'/login'} className=' text-white p-3 mx-auto'>
 						signIn
-					</Link>
+					</Link> */}
 				</div>
 			) : (
 				<>
@@ -26,9 +26,6 @@ const Navbar = () => {
 						<Link href={'/home'} className=' text-white p-3 mx-auto'>
 							Home
 						</Link>
-						<Link href={'/home'} className=' text-white p-3 mx-auto'>
-							User
-						</Link> 
 						<button onClick={() => signOut()}>signOut</button>
 					</div>
 				</>

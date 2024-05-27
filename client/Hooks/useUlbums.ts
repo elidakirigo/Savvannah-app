@@ -35,7 +35,8 @@ export const useUserAlbum = () => {
 
 	const allUserdata = user.map((data: { id: number; email: string; name: string }) => {
 		const noOfAlbums = UserAlbums[data.id - 1]?.length
-		return { ...data, noOfAlbums }
+		const currentAlbums = UserAlbums[data.id - 1]
+		return { ...data, noOfAlbums, currentAlbums }
 	})
 
 	return { UserAlbums, allUserdata }
