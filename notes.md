@@ -10,3 +10,9 @@ npm install --save-dev eslint-config-prettier eslint-plugin-prettier
 npm install react-icons react-hot-toast
 
 https://blog.bitsrc.io/5-methods-to-persisting-state-between-page-reloads-in-react-8fc9abd3fa2f
+
+npm install -D jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+
+npm init jest@latest
+
+https://nextjs.org/docs/app/building-your-application/testing/jest
