@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { useAlbumPhotos } from '../../../../Hooks/usePhotos'
+import Image from 'next/image'
 
 type Props = {
 	params: {
@@ -17,8 +18,8 @@ const Page = ({ params: { id } }: Props) => {
 	return (
 		<div className='max-w-[] flex flex-wrap gap-5 p-4'>
 			{currentAlbum?.map(({ thumbnailUrl, title, id, url }) => (
-				<div className='max-w-[250px] rounded overflow-hidden shadow-lg cursor-pointer' onClick={() => router.push('/photo/' + id)}>
-					<img className='w-full' src={thumbnailUrl} alt={title} />
+				<div className='max-w-[250px] rounded overflow-hidden shadow-lg cursor-pointer' onClick={() => router.push('/photo/' + id)} key={id}>
+					<Image className='w-full' src={thumbnailUrl} alt={title} />
 					<div className='py-4'>
 						<div className='font-semibold  mb-2'>
 							<div className='px-6 pt-4 pb-2'>
