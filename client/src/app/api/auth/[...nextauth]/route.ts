@@ -4,7 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 
- const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -32,6 +32,6 @@ import GithubProvider from "next-auth/providers/github";
   secret: process.env.AUTH_SECRET,
 };
 // export const getAuth = () => getServerSession(authOptions)
-// const handler = NextAuth(authOptions);
-export default NextAuth(authOptions)
-// export { handler as GET, handler as POST };
+const handler = NextAuth(authOptions);
+// export default NextAuth(authOptions)
+export { handler as GET, handler as POST };

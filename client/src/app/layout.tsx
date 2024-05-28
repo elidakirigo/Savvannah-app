@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 import LandingPage from './landingPage'
-import { authOptions } from './api/[...nextauth]/route'
+import { authOptions } from './api/auth/[...nextauth]/route'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
@@ -18,9 +18,7 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-	const session = await getServerSession(authOptions)
-
-	// if (!session) redirect('/')
+	const session = await getServerSession(authOptions) 
 
 	return (
 		<html lang='en'>
