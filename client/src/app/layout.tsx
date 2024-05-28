@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 import LandingPage from './landingPage'
-import { authOptions } from './api/auth/[...nextauth]/route'
+import { authOptions } from './api/[...nextauth]/route'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
