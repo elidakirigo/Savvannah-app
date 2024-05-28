@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth'
 import { SessionProvider } from '../../components/SessionProvider'
 import './globals.css'
-import { authOptions } from './api/auth/[...nextauth]/route'
+import { authOptions } from './api/[...nextauth]/route'
 import { Poppins } from 'next/font/google'
 import ClientProvider from '../../components/ClientProvider'
 import Navbar from '../../components/navbar'
@@ -26,9 +26,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 	return (
 		<html lang='en'>
 			<body className={poppins.className}>
+				{/* session setup */}
 				<SessionProvider session={session}>
-					<Navbar /> 
-					{!session ? <LandingPage /> : <>{children}</>} 
+					{/* navbar */}
+					<Navbar />
+					{/* content page */}
+					{!session ? <LandingPage /> : <>{children}</>}
 					<ToastContainer />
 				</SessionProvider>
 			</body>

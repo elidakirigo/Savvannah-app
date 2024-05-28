@@ -3,7 +3,6 @@ import NextAuth, { getServerSession } from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
-import TwitterProvider from "next-auth/providers/twitter";
 
 export const authOptions: NextAuthOptions = {
   providers: [

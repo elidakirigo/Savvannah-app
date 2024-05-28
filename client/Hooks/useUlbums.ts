@@ -3,7 +3,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useUser } from "./useUser";
-import { Bounce, ToastContainer, toast } from 'react-toastify'
+import { Bounce, toast } from 'react-toastify'
+
+/**
+ * Fetches the albums from the api
+ * @returns an array of all albums
+ */
 
 export const useAlbums = () => {
   const [album, setAlbum] = useState([]);
@@ -38,6 +43,11 @@ export const useAlbums = () => {
   return album;
 };
 
+/**
+ * Organizes the albums according to same users
+ * @returns an array of organized objects with albums that share the same users
+ */
+
 export const useUserAlbum = () => {
   const albums = useAlbums();
   const user = useUser();
@@ -45,9 +55,9 @@ export const useUserAlbum = () => {
   const userIndex = user.map((user: { id: number }) => user.id);
 
   const UserAlbums = userIndex.map((data) => {
-    return albums.filter((a: { userId: number }) => {
-      if (data == a.userId) {
-        return { data: { ...a } };
+    return albums.filter((userdata: { userId: number }) => {
+      if (data == userdata.userId) {
+        return { data: { ...userdata } };
       }
     });
   });
