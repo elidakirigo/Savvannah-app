@@ -25,7 +25,7 @@ function LandingPage() {
 
 				{/* sign in section */}
 				{!session && (
-					<button onClick={() => signIn('google')} className='text-white font-bold text-3xl bg-purple-500 animate-pulse border-[1px] rounded-lg p-5 mt-6'>
+					<button data-testId='signinbtn' onClick={() => signIn('google')} className='text-white font-bold text-3xl bg-purple-500 animate-pulse border-[1px] rounded-lg p-5 mt-6'>
 						Sign In to use Savannah App
 					</button>
 				)}

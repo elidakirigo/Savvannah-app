@@ -15,15 +15,15 @@ export const authOptions: NextAuthOptions = {
         },
       },
     }),
-    GithubProvider({
-      clientId: process.env.GITHUB_ID!,
-      clientSecret: process.env.GITHUB_SECRET!,
-      authorization: {
-        params: {
-          prompt: "consent",
-        },
-      },
-    }),
+    // GithubProvider({
+    //   clientId: process.env.GITHUB_ID!,
+    //   clientSecret: process.env.GITHUB_SECRET!,
+    //   authorization: {
+    //     params: {
+    //       prompt: "consent",
+    //     },
+    //   },
+    // }),
     // TwitterProvider({
     // 	clientId: process.env.TWITTER_ID!,
     // 	clientSecret: process.env.TWITTER_SECRET!,
