@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom'
-import { render } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import LandingPage from '../landingPage'
 
+test('Home', () => {
+    render(<LandingPage />)
 
-describe('Home', () => {
-    it('renders without crashing', () => {
-        render(
-               <LandingPage/>
-        )
-    })
+    const page = screen.getByTestId('landingpage')
+	// it('renders without crashing', () => {
+		
+	// })
 })
