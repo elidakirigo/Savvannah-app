@@ -1,15 +1,14 @@
 import { getServerSession } from 'next-auth'
 import { SessionProvider } from '../../components/SessionProvider'
 import './globals.css'
-import { authOptions } from './api/auth/[...nextauth]/route'
 import { Poppins } from 'next/font/google'
 import ClientProvider from '../../components/ClientProvider'
 import Navbar from '../../components/navbar'
 import { ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
-import { redirect } from 'next/navigation'
 import LandingPage from './landingPage'
+import { authOptions } from './api/auth/[...nextauth]/route'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
