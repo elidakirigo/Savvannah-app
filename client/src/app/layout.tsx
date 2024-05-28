@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth'
 import { SessionProvider } from '../../components/SessionProvider'
 import './globals.css'
-import { authOptions } from './api/[...nextauth]/route'
+import { authOptions } from './api/auth/[...nextauth]'
 import { Poppins } from 'next/font/google'
 import ClientProvider from '../../components/ClientProvider'
 import Navbar from '../../components/navbar'
