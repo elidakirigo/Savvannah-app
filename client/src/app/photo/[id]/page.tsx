@@ -16,7 +16,7 @@ const Page = ({ params: { id } }: Props) => {
 	const { thumbnailUrl, title } = AllPhotos[Number(id) - 1] || ''
 
 	const [edit, setEdit] = useState(false)
-	const [titleName, setTitleName] = useState(title)
+	const [titleName, setTitleName] = useState<string>(title)
 
 	useEffect(() => {
 		setTitleName(title)
