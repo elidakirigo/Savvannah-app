@@ -12,7 +12,7 @@ const Navbar = () => {
 		<div className=' w-full bg-purple-600 text-white p-3  flex items-center justify-start'>
 			{session ? (
 				<div>
-					<Link href={'/'} className=' text-white p-3 mx-auto'>
+					<Link href={'/'} data-testid='title' className=' text-white p-3 mx-auto'>
 						Savannah App
 					</Link>
 					{/* <Link href={'/login'} className=' text-white p-3 mx-auto'>

@@ -1,8 +1,10 @@
 'use client'
 
+import { Bounce, toast } from 'react-toastify' 
 import Image from 'next/image'
 import { useAlbumPhotos, usePhotos } from '../../../../Hooks/usePhotos'
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 type Props = {
 	params: {
@@ -22,9 +24,12 @@ const Page = ({ params: { id } }: Props) => {
 		setTitleName(title)
 	}, [title])
 
-  
-	const updateBtn = () => {
-		setEdit(false)
+	const updateBtn = (event: any) => {
+		event.preventDefault(), setEdit(false)
+
+		axios.put('http://localhost:8081/update/' + id, titleName)
+
+		toast.success('updated successfully!!')
 	}
 
 	return (

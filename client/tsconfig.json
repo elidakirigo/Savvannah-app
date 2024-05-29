@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "babel.config.js", "src/app/__test__/landingpage.test.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "babel.config.js", "src/app/__test__/landingpage.test.js", "src/app/__test__/navbar.test.js"],
   "exclude": ["node_modules"]
 }
