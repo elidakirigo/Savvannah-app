@@ -16,3 +16,5 @@ npm install -D jest jest-environment-jsdom @testing-library/react @testing-libra
 npm init jest@latest
 
 https://nextjs.org/docs/app/building-your-application/testing/jest
+
+npm test -- --watch
