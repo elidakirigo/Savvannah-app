@@ -5,8 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Navbar = () => {
-	// const { data: session } = useSession();
-	const session = null
+	const { data: session } = useSession(); 
 
 	return (
 		<div className=' w-full bg-purple-600 text-white p-3  flex items-center justify-start'>

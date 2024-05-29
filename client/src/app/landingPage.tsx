@@ -1,9 +1,9 @@
 'use client'
 
-import { signIn } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 
 function LandingPage() {
-	const session= null
+	const { data: session } = useSession()
 
 	return (
 		<>
