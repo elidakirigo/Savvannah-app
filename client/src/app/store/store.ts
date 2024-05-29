@@ -1,12 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import {  usersSlice } from './slices/userSlice'
+import { albumsSlice } from './slices/albumSlice'
+import { photosSlice } from './slices/photoSlice'
 
 export const makeStore = () => {
     return configureStore({
-        reducer: { 
-            users: usersSlice.reducer,
-        },
-    })
+			reducer: {
+				users: usersSlice.reducer,
+				photos: photosSlice.reducer,
+				albums: albumsSlice.reducer,
+			},
+		})
 }
 
 // Infer the type of makeStore

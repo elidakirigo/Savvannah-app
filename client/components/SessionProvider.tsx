@@ -7,6 +7,6 @@ type Props = {
   children: React.ReactNode;
   session: Session | null;
 };
-export function SessionProvider({ children, session }: Props) {
+export function SessionProvider({ children,session }: Props) {
   return <Provider>{children}</Provider>;
 }

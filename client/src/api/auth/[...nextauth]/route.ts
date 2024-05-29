@@ -1,5 +1,5 @@
-import { NextAuthOptions } from 'next-auth'
-import NextAuth, { getServerSession } from 'next-auth/next'
+import { NextAuthOptions, getServerSession } from 'next-auth'
+import NextAuth from 'next-auth/next'
 import GoogleProvider from 'next-auth/providers/google'
 
 export const authOptions: NextAuthOptions = {
@@ -16,5 +16,7 @@ export const authOptions: NextAuthOptions = {
 	],
 	secret: process.env.AUTH_SECRET,
 }
+// export const getAuth = async () => await getServerSession(authOptions)
 const handler = NextAuth(authOptions)
+// export default NextAuth(authOptions)
 export { handler as GET, handler as POST }

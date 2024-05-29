@@ -1,13 +1,14 @@
+// import { authOptions } from './api/auth/[...nextauth]/route'
 import { getServerSession } from 'next-auth'
-import { SessionProvider } from '../../components/SessionProvider'
-import './globals.css'
 import { Poppins } from 'next/font/google'
-import Navbar from '../../components/navbar'
+import { SessionProvider } from '../../components/SessionProvider'
 import { ToastContainer } from 'react-toastify'
 import LandingPage from './landingPage'
+import Navbar from '../../components/navbar'
 import StoreProvider from '../../components/StoreProvider'
-import 'react-toastify/dist/ReactToastify.css'
 import { authOptions } from '@/api/auth/[...nextauth]/route'
+import 'react-toastify/dist/ReactToastify.css'
+import './globals.css'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
@@ -17,21 +18,21 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-	const session = await getServerSession(authOptions)
-
+	// const session = await getServerSession(authOptions)
+	const session = null
 	return (
 		<html lang='en'>
 			<body className={poppins.className}>
 				{/* session setup */}
-				<SessionProvider session={session}>
-					<StoreProvider>
-						{/* navbar */}
-						<Navbar />
-						{/* content page */}
-						{!session ? <LandingPage /> : <>{children}</>}
-						<ToastContainer />
-					</StoreProvider>
-				</SessionProvider>
+				{/* <SessionProvider session={session}> */}
+				<StoreProvider>
+					{/* navbar */}
+					<Navbar />
+					{/* content page */}
+					{session ? <LandingPage /> : <>{children}</>}
+					<ToastContainer />
+				</StoreProvider>
+				{/* </SessionProvider> */}
 			</body>
 		</html>
 	)
