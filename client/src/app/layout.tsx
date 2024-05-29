@@ -5,9 +5,9 @@ import { Poppins } from 'next/font/google'
 import Navbar from '../../components/navbar'
 import { ToastContainer } from 'react-toastify'
 import LandingPage from './landingPage'
-import { authOptions } from './api/auth/[...nextauth]/route'
 import StoreProvider from '../../components/StoreProvider'
 import 'react-toastify/dist/ReactToastify.css'
+import { authOptions } from '@/api/auth/[...nextauth]/route'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
