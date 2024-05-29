@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import LandingPage from './landingPage'
 import { authOptions } from './api/auth/[...nextauth]/route'
 import { Provider } from 'react-redux'
+import StoreProvider from '../../components/StoreProvider'
 // import store from './store/store'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] })
@@ -24,17 +25,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 	return (
 		<html lang='en'>
-			
-				<body className={poppins.className}>
-					{/* session setup */}
-					<SessionProvider session={session}>
+			<body className={poppins.className}>
+				{/* session setup */}
+				<SessionProvider session={session}>
+					<StoreProvider>
 						{/* navbar */}
 						<Navbar />
 						{/* content page */}
 						{!session ? <LandingPage /> : <>{children}</>}
 						<ToastContainer />
-					</SessionProvider>
-				</body>
+					</StoreProvider>
+				</SessionProvider>
+			</body>
 		</html>
 	)
 }
