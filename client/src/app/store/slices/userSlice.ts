@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store'
-import { usefetchuser } from '../../../../Hooks/useUser'
 import { AllUsers } from '../../types/users'
 
 interface UsersState {

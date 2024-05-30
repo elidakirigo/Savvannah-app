@@ -4,12 +4,12 @@ export type AllUsers = {
 	email: string
 }
 export type Allalbums = {
+	userId: number
 	id: number
-	name: string
-	email: string
+
 }
 export type Allphotos = {
 	id: number
-	name: string
+	albumId: number
 	email: string
 }

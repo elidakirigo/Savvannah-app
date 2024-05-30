@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store'
-import { usefetchphoto } from '../../../../Hooks/usephoto'
 import { Allphotos } from '../../types/users'
 
 interface photosState {

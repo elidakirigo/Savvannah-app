@@ -1,10 +1,8 @@
+import LandingPage from '@/app/landingPage'
 import '@testing-library/jest-dom'
 import { render, fireEvent, screen } from '@testing-library/react'
-import Navbar from '../../../components/navbar'
-import { SessionProvider } from '../../../components/SessionProvider'
-import LandingPage from '../landingPage'
-import StoreProvider from '../../../components/StoreProvider'
 import userEvent from '@testing-library/user-event'
+import StoreProvider from '../components/StoreProvider'
 
 describe('landing page', () => {
 	render(

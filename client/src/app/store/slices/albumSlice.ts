@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store'
-import { usefetchalbum } from '../../../../Hooks/usealbum'
 import { Allalbums } from '../../types/users'
 
 interface albumsState {
@@ -16,9 +15,7 @@ export const albumsSlice = createSlice({
 	initialState,
 	reducers: {
 		fetchalbums(state, action) {
-			console.log(state)
-			
-			state.albums =action.payload
+			state.albums = action.payload
 		},
 	},
 })
