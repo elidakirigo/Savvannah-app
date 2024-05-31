@@ -18,3 +18,6 @@ npm init jest@latest
 https://nextjs.org/docs/app/building-your-application/testing/jest
 
 npm test -- --watch
+
+https://testing-library.com/docs/react-testing-library/example-intro
+https://nextjs.org/docs/app/building-your-application/testing/jest

@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store'
-import { usefetchuser } from '../../../../Hooks/useUser'
 import { AllUsers } from '../../types/users'
 
 interface UsersState {
@@ -16,9 +15,7 @@ export const usersSlice = createSlice({
 	initialState,
 	reducers: {
 		fetchusers(state, action) {
-			console.log(state)
-			
-			state.users =action.payload
+			state.users = action.payload
 		},
 	},
 })

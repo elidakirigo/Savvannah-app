@@ -5,6 +5,7 @@ import { signIn, useSession } from 'next-auth/react'
 function LandingPage() {
 	const { data: session } = useSession()
 
+
 	return (
 		<>
 			<div data-testid='landingpage' className='flex top-16 p-8 relative justify-start items-center flex-col text-center '>

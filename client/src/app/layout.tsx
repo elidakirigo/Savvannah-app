@@ -1,13 +1,13 @@
-import { getServerSession } from 'next-auth'
-import { SessionProvider } from '../../components/SessionProvider'
-import './globals.css'
 import { Poppins } from 'next/font/google'
-import Navbar from '../../components/navbar'
+import { SessionProvider } from '../../components/SessionProvider'
 import { ToastContainer } from 'react-toastify'
 import LandingPage from './landingPage'
+import Navbar from '../../components/navbar'
 import StoreProvider from '../../components/StoreProvider'
+import { getServerSession } from 'next-auth'
+import { authOptions } from './api/authoptions'
 import 'react-toastify/dist/ReactToastify.css'
-import { authOptions } from '@/api/auth/[...nextauth]/route'
+import './globals.css'
 
 const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
