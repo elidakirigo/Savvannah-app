@@ -4,10 +4,10 @@ import { Allalbums } from '@/app/types/users'
 import { useRouter } from 'next/navigation'
 import { useUserAlbum } from '../../../../Hooks/useUlbums'
 
-type Props = {
-	currentUser?: { noOfAlbums: number; currentAlbums: Allalbums[]; id: number; email: string; name: string }
-	currentId: any
+type Props = { 
+	currentId: string
 }
+
 const User = ({ currentId }: Props) => {
 	const router = useRouter()
 	const { allUserdata } = useUserAlbum()

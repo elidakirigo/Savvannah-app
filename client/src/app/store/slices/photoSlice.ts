@@ -15,8 +15,6 @@ export const photosSlice = createSlice({
 	initialState,
 	reducers: {
 		fetchphotos(state, action) {
-			console.log(state)
-			
 			state.photos =action.payload
 		},
 	},

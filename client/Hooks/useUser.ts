@@ -34,10 +34,8 @@ export const usefetchuser = () => {
 					theme: 'light',
 					transition: Bounce,
 				},
-			) 
-			setUser(users) 
-			console.log(users);
-			
+			)
+			setUser(users)
 			dispatch(fetchusers(users))
 		}
 

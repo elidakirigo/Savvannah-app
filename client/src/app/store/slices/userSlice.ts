@@ -15,8 +15,7 @@ export const usersSlice = createSlice({
 	initialState,
 	reducers: {
 		fetchusers(state, action) {
-			
-			state.users =action.payload
+			state.users = action.payload
 		},
 	},
 })

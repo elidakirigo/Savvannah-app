@@ -4,7 +4,9 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useAlbums } from './useUlbums'
 import { useAppSelector } from '@/app/store/hooks'
-
+import { Bounce, toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { fetchphotos } from '@/app/store/slices/photoSlice'
 /**
  * Fetches the photos from the api
  * @returns an array of all photos
@@ -12,14 +14,35 @@ import { useAppSelector } from '@/app/store/hooks'
 
 export const useFetchPhotos = () => {
 	const [photos, setPhotos] = useState([])
+	const dispatch = useDispatch()
 
 	useEffect(() => {
-		const fetchphotos = async () => {
-			const { data: photos } = await axios.get(process.env.NEXT_PUBLIC_URL + '/photos')
+		const fetchphoto = async () => {
+			const { data: photos } = await toast.promise(
+				axios.get(process.env.NEXT_PUBLIC_URL + '/photos'),
+				{
+					pending: 'loading photos ',
+					success: 'photos loaded successfully',
+					error: 'No photos found ',
+				},
+				{
+					position: 'top-center',
+					autoClose: 3000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+					theme: 'light',
+					transition: Bounce,
+				},
+			)
 			setPhotos(photos)
+			dispatch(fetchphotos(photos))
+
 		}
 
-		fetchphotos()
+		fetchphoto()
 	}, [])
 
 	return photos

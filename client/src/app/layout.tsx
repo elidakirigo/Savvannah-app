@@ -6,7 +6,6 @@ import Navbar from '../../components/navbar'
 import StoreProvider from '../../components/StoreProvider'
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/authoptions'
-
 import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
 
