@@ -3,8 +3,7 @@
 import { signIn, useSession } from 'next-auth/react'
 
 function LandingPage() {
-	// const { data: session } = useSession()
-	const session = null
+	const { data: session } = useSession()
 
 
 	return (

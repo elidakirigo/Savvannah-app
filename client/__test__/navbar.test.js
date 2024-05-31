@@ -36,9 +36,9 @@ describe('behavioral checks', () => {
 	})
 
 	it('should call the signout button', async () => {
-		render(<Navbar />)
-
-		const signOutBtn = screen.getByRole('Link')
+		const { getByRole } = render(<Navbar />)
+		// use query
+		const signOutBtn = getByRole('Link')
 		await userEvent.click(signOutBtn)
 		expect('something').toHaveBeenCalled()
 	})
