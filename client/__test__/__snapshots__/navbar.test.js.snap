@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar render renders correctly 1`] = `
+<div>
+  <div
+    class=" w-full bg-purple-600 text-white p-3  flex items-center justify-start"
+  >
+    <a
+      class="flex flex-row-reverse gap-4 items-center justify-center"
+      href="/"
+    >
+      <h1>
+         
+      </h1>
+      <img
+        alt="user"
+        class="rounded-full ml-1"
+        data-nimg="1"
+        decoding="async"
+        height="30"
+        src=""
+        style="color: transparent;"
+        width="30"
+      />
+    </a>
+    <div>
+      <a
+        class=" text-white p-3 mx-auto"
+        data-testid="home"
+        href="/home"
+      >
+        Home
+      </a>
+      <button>
+        signOut
+      </button>
+    </div>
+  </div>
+</div>
+`;

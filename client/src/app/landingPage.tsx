@@ -10,7 +10,7 @@ function LandingPage() {
 		<>
 			<div data-testid='landingpage' className='flex top-16 p-8 relative justify-start items-center flex-col text-center '>
 				<h1 className='text-[25px] md:text-[40px] pb-5 '>Welcome to Savannah App</h1>
-				<p className='max-w-[700px] '>
+				<p className='max-w-[700px] ' data-testid='description'>
 					This web application allows users to manage and view user information, albums, and photos through a responsive and polished interface.
 					<span>
 						<strong> Key features include:</strong>

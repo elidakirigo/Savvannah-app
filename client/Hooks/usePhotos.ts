@@ -7,6 +7,7 @@ import { useAppSelector } from '@/app/store/hooks'
 import { Bounce, toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { fetchphotos } from '@/app/store/slices/photoSlice'
+
 /**
  * Fetches the photos from the api
  * @returns an array of all photos
@@ -61,6 +62,7 @@ export const usePhotos = () => {
 
 	return photo
 }
+
 /**
  * Organizes the photos according to same albums
  * @returns an array of organized objects with photos that share the same album

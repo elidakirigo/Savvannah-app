@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Navbar = () => {
-	const { data: session } = useSession();
+	const { data: session } = useSession()
 
 	return (
 		<div className=' w-full bg-purple-600 text-white p-3  flex items-center justify-start'>
@@ -17,13 +17,18 @@ const Navbar = () => {
 				</div>
 			) : (
 				<>
-					<h1>{session.user?.name} </h1>
-					<Image alt='user' src={session?.user?.image!} width={30} height={30} unoptimized={true} className='rounded-full ml-1' />
+					<Link href={'/'} className='flex flex-row-reverse gap-4 items-center justify-center'>
+						<h1 data-testid='username'>{session.user?.name} </h1>
+						<Image alt='user' src={session?.user?.image! || ''} width={30} height={30} unoptimized={true} className='rounded-full ml-1' data-testid='userImg' />
+					</Link>
+
 					<div>
-						<Link href={'/home'} className=' text-white p-3 mx-auto'>
+						<Link href={'/home'} className=' text-white p-3 mx-auto' data-testid='home'>
 							Home
 						</Link>
-						<button onClick={() => signOut()}>signOut</button>
+						<button onClick={() => signOut()} data-testid='signOut'>
+							signOut
+						</button>
 					</div>
 				</>
 			)}
