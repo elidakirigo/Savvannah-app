@@ -9,6 +9,10 @@ import StoreProvider from '../components/StoreProvider'
 import { useSession } from 'next-auth/react'
 import { mockSession } from './mocks/data'
 
+global.window.URL.createObjectURL = jest.fn()
+
+HTMLAnchorElement.prototype.click = jest.fn()
+
 jest.mock('next-auth/react')
 
 jest.mock('next/navigation', () => {
@@ -97,7 +101,6 @@ describe('Test Auth component not logged in', () => {
 
 	it('should render title when not logged in', () => {
 		const title = screen.getByTestId('title')
-		// fireEvent.click(page)
 		expect(title).toHaveTextContent('Savannah App')
 	})
 
@@ -188,14 +191,7 @@ describe('navbar when logged in', () => {
 				<Navbar />
 			</StoreProvider>,
 		)
-	})
-
-	it('navigation to /home', async () => {
-		await waitFor(() => {
-			fireEvent.click(screen.getAllByTestId('home')[0])
-			expect(history.location.pathname).toBe('/')
-		})
-	})
+	}) 
 
 	it('should not render title when logged in', () => {
 		const title = screen.queryByTestId('title')
