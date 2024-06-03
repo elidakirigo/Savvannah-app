@@ -29,9 +29,7 @@ jest.mock('next/navigation', () => {
 			get: () => {},
 		}),
 	}
-})
-
-global.fetch = jest.fn()
+}) 
 
 const nextAuthReactMocked = nextAuthReact
 
@@ -47,9 +45,7 @@ describe('renders the user page', () => {
 			return { data: mockSession, status: 'authenticated' }
 		})
 
-		nextAuthReactMocked.signIn.mockImplementation(() => Promise.resolve({ error: '', status: 200, ok: true, url: '' }))
-
-		const windowFetchSpy = jest.spyOn(window, 'fetch').mockImplementation(mockFetch)
+		nextAuthReactMocked.signIn.mockImplementation(() => Promise.resolve({ error: '', status: 200, ok: true, url: '' })) 
 
 		useUserAlbum.mockReturnValue({ allUserdata })
 
@@ -87,4 +83,22 @@ describe('renders the user page', () => {
 			expect(history.location.pathname).toBe('/')
 		})
 	})
+
+	it('should have name content', async () => {
+		await waitFor(() => {
+			expect(screen.getAllByTestId('username')[0]).toHaveTextContent('Leanne Graham')
+		})
+	})
+
+		it('should have ID row', async () => {
+			await waitFor(() => {
+				expect(screen.getAllByTestId('albumtitle')[0]).toBeTruthy()
+			})
+		})
+
+			it('should have Album title row', async () => {
+				await waitFor(() => {
+					expect(screen.getAllByTestId('albumid')[0]).toBeTruthy()
+				})
+			})
 })
