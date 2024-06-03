@@ -6,7 +6,6 @@ import Link from 'next/link'
 
 const Navbar = () => {
 	const { data: session } = useSession()
-	console.log(session)
 
 	return (
 		<div className=' w-full bg-purple-600 text-white p-3  flex items-center justify-start'>
