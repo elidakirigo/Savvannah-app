@@ -70,6 +70,7 @@ export const useAlbums = () => {
 export const useUserAlbum = () => {
 	const albums = useAlbums()
 	const user = useUser()
+	console.log(user)
 
 	const userIndex = user.map((user: { id: number }) => user.id)
 

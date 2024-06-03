@@ -7,15 +7,11 @@ import Link from 'next/link'
 import Navbar from '../components/navbar'
 import StoreProvider from '../components/StoreProvider'
 import { useSession } from 'next-auth/react'
+import { mockSession } from './mocks/data'
 
 jest.mock('next-auth/react')
 
 const nextAuthReactMocked = nextAuthReact
-
-const mockSession = {
-	expires: new Date(Date.now() + 2 * 86400).toISOString(),
-	user: { name: 'moon pie', email: 'wakamoonpie@gmail.com', image: 'https://lh3.googleusercontent.com/a/ACg8ocLTSwAi2PRqfpYSuak05Q2jiRKBnYqL4wv88UJqLxzmel3jXw=s96-c' },
-}
 
 describe('homepage render', () => {
 	nextAuthReactMocked.useSession.mockImplementation((_options) => {

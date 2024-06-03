@@ -4,7 +4,7 @@ import { Allalbums } from '@/app/types/users'
 import { useRouter } from 'next/navigation'
 import { useUserAlbum } from '../../../../Hooks/useUlbums'
 
-type Props = { 
+type Props = {
 	currentId: string
 }
 
