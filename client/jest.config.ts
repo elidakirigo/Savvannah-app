@@ -17,8 +17,9 @@ const createJestConfig = nextJest({
 const config: Config = {
 	coverageProvider: 'v8',
 	testEnvironment: 'jsdom',
-	collectCoverage: true,
+	// collectCoverage: true,
 	coverageDirectory: 'coverage',
+	"coverageReporters": [ "text-summary", "lcov" ],
 	globals: {
 		axios: require('axios'),
 		// usefetchuser,
@@ -37,6 +38,7 @@ const config: Config = {
 			lines: 35,
 			statements: 35,
 		},
+		
 	},
 }
 

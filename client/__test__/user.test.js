@@ -57,9 +57,9 @@ describe('renders the user page', () => {
 		)
 	})
 
-	afterEach(() => {
-		jest.restoreAllMocks()
-	})
+	// afterEach(() => {
+	// 	jest.restoreAllMocks()
+	// })
 
 	it('should render userpage successfully', async () => {
 		await waitFor(() => {
