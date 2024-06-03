@@ -1,5 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Navbar render renders correctly 1`] = `
+<div>
+  <div
+    class=" w-full bg-purple-600 text-white p-3  flex items-center justify-start"
+  >
+    <a
+      class="flex flex-row-reverse gap-4 items-center justify-center"
+      href="/"
+    >
+      <h1
+        data-testid="username"
+      >
+        moon pie
+         
+      </h1>
+      <img
+        alt="user"
+        class="rounded-full ml-1"
+        data-nimg="1"
+        data-testid="userImg"
+        decoding="async"
+        height="30"
+        loading="lazy"
+        src="https://lh3.googleusercontent.com/a/ACg8ocLTSwAi2PRqfpYSuak05Q2jiRKBnYqL4wv88UJqLxzmel3jXw=s96-c"
+        style="color: transparent;"
+        width="30"
+      />
+    </a>
+    <div>
+      <a
+        class=" text-white p-3 mx-auto"
+        data-testid="home"
+        href="/home"
+      >
+        Home
+      </a>
+      <button
+        data-testid="signOut"
+      >
+        signOut
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`homepage render renders correctly 1`] = `
 <div>
   <div
