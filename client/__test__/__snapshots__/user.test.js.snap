@@ -41,13 +41,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             quidem molestiae enim
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             1
           </td>
@@ -57,13 +58,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             sunt qui excepturi placeat culpa
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             2
           </td>
@@ -73,13 +75,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             omnis laborum odio
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             3
           </td>
@@ -89,13 +92,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             non esse culpa molestiae omnis sed optio
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             4
           </td>
@@ -105,13 +109,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             eaque aut omnis a
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             5
           </td>
@@ -121,13 +126,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             natus impedit quibusdam illo est
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             6
           </td>
@@ -137,13 +143,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             quibusdam autem aliquid et et quia
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             7
           </td>
@@ -153,13 +160,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             qui fuga est a eum
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             8
           </td>
@@ -169,13 +177,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             saepe unde necessitatibus rem
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             9
           </td>
@@ -185,13 +194,14 @@ exports[`renders the user page should render userpage successfully 1`] = `
         >
           <th
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 hover:bg-slate-500 dark:text-white dark:bg-gray-800"
-            data-testid="username"
+            data-testid="albumname"
             scope="row"
           >
             distinctio laborum qui
           </th>
           <td
             class="px-6 py-4"
+            data-testid="albumids"
           >
             10
           </td>

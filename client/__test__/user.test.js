@@ -29,7 +29,7 @@ jest.mock('next/navigation', () => {
 			get: () => {},
 		}),
 	}
-}) 
+})
 
 const nextAuthReactMocked = nextAuthReact
 
@@ -45,7 +45,7 @@ describe('renders the user page', () => {
 			return { data: mockSession, status: 'authenticated' }
 		})
 
-		nextAuthReactMocked.signIn.mockImplementation(() => Promise.resolve({ error: '', status: 200, ok: true, url: '' })) 
+		nextAuthReactMocked.signIn.mockImplementation(() => Promise.resolve({ error: '', status: 200, ok: true, url: '' }))
 
 		useUserAlbum.mockReturnValue({ allUserdata })
 
@@ -90,15 +90,26 @@ describe('renders the user page', () => {
 		})
 	})
 
-		it('should have ID row', async () => {
+	it('should have ID row', async () => {
+		await waitFor(() => {
+			expect(screen.getAllByTestId('albumtitle')[0]).toBeTruthy()
+		})
+	})
+
+		it('should check if first ID column exists', async () => {
 			await waitFor(() => {
-				expect(screen.getAllByTestId('albumtitle')[0]).toBeTruthy()
+				expect(screen.getAllByTestId('albumids')[0]).toBeTruthy()
 			})
 		})
+	it('should have Album title row', async () => {
+		await waitFor(() => {
+			expect(screen.getAllByTestId('albumid')[0]).toBeTruthy()
+		})
+	})
 
-			it('should have Album title row', async () => {
-				await waitFor(() => {
-					expect(screen.getAllByTestId('albumid')[0]).toBeTruthy()
-				})
-			})
+	it('should check if first album column exists', async () => {
+		await waitFor(() => {
+			expect(screen.getAllByTestId('albumname')[0]).toBeTruthy()
+		})
+	})
 })
