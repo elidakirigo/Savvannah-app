@@ -1,37 +1,18 @@
-import { render, screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { render, fireEvent, screen, waitFor } from '@testing-library/react'
+import * as nextAuthReact from 'next-auth/react'
+import Link from 'next/link'
 import Page from '../src/app/home/page'
-import axios from 'axios'
+import StoreProvider from '../components/StoreProvider'
+import userEvent from '@testing-library/user-event'
+
 jest.mock('axios')
 
-const mockUsers = [
-	{
-		id: 1,
-		name: 'Leanne Graham',
-		username: 'Bret',
-		email: 'Sincere@april.biz',
-		address: {
-			street: 'Kulas Light',
-			suite: 'Apt. 556',
-			city: 'Gwenborough',
-			zipcode: '92998-3874',
-			geo: {
-				lat: '-37.3159',
-				lng: '81.1496',
-			},
-		},
-		phone: '1-770-736-8031 x56442',
-		website: 'hildegard.org',
-		company: {
-			name: 'Romaguera-Crona',
-			catchPhrase: 'Multi-layered client-server neural-net',
-			bs: 'harness real-time e-markets',
-		},
-	},
-]
+jest.mock('next-auth/react')
 
-const mocksetUsers = jest.fn()
+const nextAuthReactMocked = nextAuthReact
+
+
 
 jest.mock('next/navigation', () => {
 	return {
@@ -51,10 +32,28 @@ jest.mock('next/navigation', () => {
 })
 
 describe('home component', () => {
+	beforeEach(() => {
+		nextAuthReactMocked.useSession.mockImplementation((_options) => {
+			return { data: mockSession, status: 'authenticated' }
+		})
 
-	it('renders homepage unchanged', () => {
-		const { container } = render(<Page />)
-		expect(container).toMatchSnapshot()
+		nextAuthReactMocked.signIn.mockImplementation(() => Promise.resolve({ error: '', status: 200, ok: true, url: '' }))
+
+		render(
+			<StoreProvider>
+				<Page />
+			</StoreProvider>,
+		)
+	})
+	it('renders home route', async () => {
+		await waitFor(() => {
+			const { container } = render(
+				<StoreProvider>
+					<Page />
+				</StoreProvider>,
+			)
+			expect(container).toMatchSnapshot()
+		})
 	})
 	// it('render api successfully', async () => {
 	// 	axios.get.mockResolvedValue({ data: mockUsers })

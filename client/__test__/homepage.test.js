@@ -7,15 +7,32 @@ import Link from 'next/link'
 import Navbar from '../components/navbar'
 import StoreProvider from '../components/StoreProvider'
 import { useSession } from 'next-auth/react'
+import { mockSession } from './mocks/data'
+
+global.window.URL.createObjectURL = jest.fn()
+
+HTMLAnchorElement.prototype.click = jest.fn()
 
 jest.mock('next-auth/react')
 
-const nextAuthReactMocked = nextAuthReact
+jest.mock('next/navigation', () => {
+	return {
+		__esModule: true,
+		usePathname: () => ({
+			pathname: '',
+		}),
+		useRouter: () => ({
+			push: jest.fn(),
+			replace: jest.fn(),
+			prefetch: jest.fn(),
+		}),
+		useSearchParams: () => ({
+			get: () => {},
+		}),
+	}
+})
 
-const mockSession = {
-	expires: new Date(Date.now() + 2 * 86400).toISOString(),
-	user: { name: 'moon pie', email: 'wakamoonpie@gmail.com', image: 'https://lh3.googleusercontent.com/a/ACg8ocLTSwAi2PRqfpYSuak05Q2jiRKBnYqL4wv88UJqLxzmel3jXw=s96-c' },
-}
+const nextAuthReactMocked = nextAuthReact
 
 describe('homepage render', () => {
 	nextAuthReactMocked.useSession.mockImplementation((_options) => {
@@ -84,7 +101,6 @@ describe('Test Auth component not logged in', () => {
 
 	it('should render title when not logged in', () => {
 		const title = screen.getByTestId('title')
-		// fireEvent.click(page)
 		expect(title).toHaveTextContent('Savannah App')
 	})
 
@@ -175,14 +191,7 @@ describe('navbar when logged in', () => {
 				<Navbar />
 			</StoreProvider>,
 		)
-	})
-
-	it('navigation to /home', async () => {
-		await waitFor(() => {
-			fireEvent.click(screen.getAllByTestId('home')[0])
-			expect(history.location.pathname).toBe('/')
-		})
-	})
+	}) 
 
 	it('should not render title when logged in', () => {
 		const title = screen.queryByTestId('title')

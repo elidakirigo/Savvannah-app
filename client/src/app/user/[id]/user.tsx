@@ -4,7 +4,7 @@ import { Allalbums } from '@/app/types/users'
 import { useRouter } from 'next/navigation'
 import { useUserAlbum } from '../../../../Hooks/useUlbums'
 
-type Props = { 
+type Props = {
 	currentId: string
 }
 
@@ -22,10 +22,10 @@ const User = ({ currentId }: Props) => {
 			<table className='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mt-8'>
 				<thead className='text-xs text-gray-700 uppercase dark:text-gray-400'>
 					<tr>
-						<th scope='col' className='px-6 py-3 bg-gray-50 dark:bg-gray-800'>
+						<th scope='col' className='px-6 py-3 bg-gray-50 dark:bg-gray-800' data-testid='albumtitle'>
 							Album title
 						</th>
-						<th scope='col' className='px-6 py-3'>
+						<th scope='col' className='px-6 py-3' data-testid='albumid'>
 							ID
 						</th>
 					</tr>

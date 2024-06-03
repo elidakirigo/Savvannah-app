@@ -37,8 +37,6 @@ export const usefetchuser = () => {
 			)
 			setUser(users)
 			dispatch(fetchusers(users))
-			console.log(users);
-			
 		}
 
 		fetchUser()
