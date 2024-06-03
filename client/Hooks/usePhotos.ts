@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { useAlbums } from './useUlbums'
-import { useAppSelector } from '@/app/store/hooks'
-import { Bounce, toast } from 'react-toastify'
-import { useDispatch } from 'react-redux'
-import { fetchphotos } from '@/app/store/slices/photoSlice'
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useAlbums } from "./useUlbums";
+import { useAppSelector } from "@/app/store/hooks";
+import { Bounce, toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { fetchphotos } from "@/app/store/slices/photoSlice";
 
 /**
  * Fetches the photos from the api
@@ -14,40 +14,39 @@ import { fetchphotos } from '@/app/store/slices/photoSlice'
  */
 
 export const useFetchPhotos = () => {
-	const [photos, setPhotos] = useState([])
-	const dispatch = useDispatch()
+  const [photos, setPhotos] = useState([]);
+  const dispatch = useDispatch();
 
-	useEffect(() => {
-		const fetchphoto = async () => {
-			const { data: photos } = await toast.promise(
-				axios.get(process.env.NEXT_PUBLIC_URL + '/photos'),
-				{
-					pending: 'loading photos ',
-					success: 'photos loaded successfully',
-					error: 'No photos found ',
-				},
-				{
-					position: 'top-center',
-					autoClose: 3000,
-					hideProgressBar: false,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-					progress: undefined,
-					theme: 'light',
-					transition: Bounce,
-				},
-			)
-			setPhotos(photos)
-			dispatch(fetchphotos(photos))
+  useEffect(() => {
+    const fetchphoto = async () => {
+      const { data: photos } = await toast.promise(
+        axios.get(process.env.NEXT_PUBLIC_URL + "/photos"),
+        {
+          pending: "loading photos ",
+          success: "photos loaded successfully",
+          error: "No photos found ",
+        },
+        {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        },
+      );
+      setPhotos(photos);
+      dispatch(fetchphotos(photos));
+    };
 
-		}
+    fetchphoto();
+  }, []);
 
-		fetchphoto()
-	}, [])
-
-	return photos
-}
+  return photos;
+};
 
 /**
  * fetches data from redux store and sends to home
@@ -55,31 +54,30 @@ export const useFetchPhotos = () => {
  */
 
 export const usePhotos = () => {
-	const photoData = useAppSelector((state) => state.photos)
-	const photo = useFetchPhotos()
+  const photoData = useAppSelector((state) => state.photos);
+  const photo = useFetchPhotos();
 
-	if (photoData.photos) return photoData.photos
+  if (photoData.photos) return photoData.photos;
 
-	return photo
-}
+  return photo;
+};
 
 /**
  * Organizes the photos according to same albums
  * @returns an array of organized objects with photos that share the same album
  */
 export const useAlbumPhotos = () => {
-	const album = useAlbums()
-	const photos = usePhotos()
-	const AlbumIndex = album.map((album: { id: number }) => album.id)
+  const album = useAlbums();
+  const photos = usePhotos();
+  const AlbumIndex = album.map((album: { id: number }) => album.id);
 
-	const Albums = AlbumIndex.map((data) => {
-		return photos.filter((albumdata: { albumId: number }) => {
-			if (data == albumdata.albumId) {
-				return { data: { ...albumdata } }
-			}
-		})
-	})
+  const Albums = AlbumIndex.map((data) => {
+    return photos.filter((albumdata: { albumId: number }) => {
+      if (data == albumdata.albumId) {
+        return { data: { ...albumdata } };
+      }
+    });
+  });
 
-	return Albums
-}
-
+  return Albums;
+};
