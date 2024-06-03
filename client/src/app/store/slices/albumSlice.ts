@@ -1,27 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { RootState } from '../store'
-import { Allalbums } from '../../types/users'
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
+import { Allalbums } from "../../types/users";
 
 interface albumsState {
-	albums: Allalbums[] | ''
+  albums: Allalbums[] | "";
 }
 
 const initialState: albumsState = {
-	albums: '',
-}
+  albums: "",
+};
 
 export const albumsSlice = createSlice({
-	name: 'albums',
-	initialState,
-	reducers: {
-		fetchalbums(state, action) {
-			state.albums = action.payload
-		},
-	},
-})
+  name: "albums",
+  initialState,
+  reducers: {
+    fetchalbums(state, action) {
+      state.albums = action.payload;
+    },
+  },
+});
 
-export const { fetchalbums } = albumsSlice.actions
+export const { fetchalbums } = albumsSlice.actions;
 
-export const selectalbums = (state: RootState) => state.albums
+export const selectalbums = (state: RootState) => state.albums;
 
-export default albumsSlice.reducer
+export default albumsSlice.reducer;

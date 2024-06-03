@@ -1,10 +1,9 @@
-'use client'
+"use client";
 
-import LandingPage from './landingPage'
+import LandingPage from "./landingPage";
 
 function Homepage() {
-
-	return <LandingPage />
+  return <LandingPage />;
 }
 
-export default Homepage
+export default Homepage;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the photo page should render Albumpage successfully 1`] = `
+<div>
+  <div
+    class="flex p-5 items-center gap-4 flex-col"
+  >
+    <div
+      class="max-w-[400px]"
+    >
+      <img
+        alt="accusamus beatae ad facilis cum similique qui sunt"
+        class="w-full"
+        data-nimg="1"
+        data-testid="image"
+        decoding="async"
+        height="10"
+        loading="lazy"
+        src="https://via.placeholder.com/150/92c952"
+        style="color: transparent;"
+        width="10"
+      />
+    </div>
+    <h1
+      data-testid="image-title"
+    >
+      accusamus beatae ad facilis cum similique qui sunt
+    </h1>
+    <button
+      class="bg-purple-700 py-2 text-white cursor-pointer hover:bg-purple-300 hover:border-2 hover:border-purple-900 hover:text-purple-900 px-6 rounded-lg shadow-md"
+      data-testid="editbtn"
+    >
+      edit title
+    </button>
+  </div>
+</div>
+`;

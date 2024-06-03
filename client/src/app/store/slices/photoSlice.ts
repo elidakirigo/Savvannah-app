@@ -1,27 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { RootState } from '../store'
-import { Allphotos } from '../../types/users'
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
+import { Allphotos } from "../../types/users";
 
 interface photosState {
-	photos: Allphotos[] | ''
+  photos: Allphotos[] | "";
 }
 
 const initialState: photosState = {
-	photos: '',
-}
+  photos: "",
+};
 
 export const photosSlice = createSlice({
-	name: 'photos',
-	initialState,
-	reducers: {
-		fetchphotos(state, action) {
-			state.photos =action.payload
-		},
-	},
-})
+  name: "photos",
+  initialState,
+  reducers: {
+    fetchphotos(state, action) {
+      state.photos = action.payload;
+    },
+  },
+});
 
-export const { fetchphotos } = photosSlice.actions
+export const { fetchphotos } = photosSlice.actions;
 
-export const selectphotos = (state: RootState) => state.photos
+export const selectphotos = (state: RootState) => state.photos;
 
-export default photosSlice.reducer
+export default photosSlice.reducer;
