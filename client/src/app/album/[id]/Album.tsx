@@ -13,7 +13,6 @@ const Album = ({ currentId }: Props) => {
   const router = useRouter();
 
   const currentAlbum = AlbumPhotos[Number(currentId) - 1];
-  console.log(currentAlbum);
 
   return (
     <div className="relative overflow-x-auto shadow-lg sm:rounded-lg m-5 max-w-[900px] border-[2px]">

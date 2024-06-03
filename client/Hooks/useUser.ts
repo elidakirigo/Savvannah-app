@@ -52,10 +52,8 @@ export const usefetchuser = () => {
  */
 export const useUser = () => {
   const UserData = useAppSelector((state) => state.users);
-  console.log(UserData);
 
   const user = usefetchuser();
-  console.log(user);
 
   if (UserData.users) return UserData.users;
 
