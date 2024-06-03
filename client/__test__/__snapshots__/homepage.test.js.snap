@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar render renders correctly 1`] = `
+<div>
+  <div
+    class=" w-full bg-purple-600 text-white p-3  flex items-center justify-start"
+  >
+    <a
+      class="flex flex-row-reverse gap-4 items-center justify-center"
+      href="/"
+    >
+      <h1
+        data-testid="username"
+      >
+        moon pie
+         
+      </h1>
+      <img
+        alt="user"
+        class="rounded-full ml-1"
+        data-nimg="1"
+        data-testid="userImg"
+        decoding="async"
+        height="30"
+        loading="lazy"
+        src="https://lh3.googleusercontent.com/a/ACg8ocLTSwAi2PRqfpYSuak05Q2jiRKBnYqL4wv88UJqLxzmel3jXw=s96-c"
+        style="color: transparent;"
+        width="30"
+      />
+    </a>
+    <div>
+      <a
+        class=" text-white p-3 mx-auto"
+        data-testid="home"
+        href="/home"
+      >
+        Home
+      </a>
+      <button
+        data-testid="signOut"
+      >
+        signOut
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`homepage render renders correctly 1`] = `
+<div>
+  <div
+    class="flex top-16 p-8 relative justify-start items-center flex-col text-center "
+    data-testid="landingpage"
+  >
+    <h1
+      class="text-[25px] md:text-[40px] pb-5 "
+    >
+      Welcome to Savannah App
+    </h1>
+    <p
+      class="max-w-[700px] "
+      data-testid="description"
+    >
+      This web application allows users to manage and view user information, albums, and photos through a responsive and polished interface.
+      <span>
+        <strong>
+           Key features include:
+        </strong>
+        <strong>
+          Landing Page: 
+        </strong>
+        <strong>
+          Authentication:
+        </strong>
+         Secure login via Google.
+        <strong>
+          User Management:
+        </strong>
+        <strong>
+          User List: 
+        </strong>
+        Displays all users and their album counts.
+        <strong>
+          User Detail:
+        </strong>
+         Shows user information and their albums.
+        <strong>
+          Album Management: 
+        </strong>
+        Album Detail: Lists details of selected albums and photos.
+        <strong>
+          Photo Management:
+        </strong>
+         Photo Detail: Allows editing of photo titles with backend updates.
+      </span>
+    </p>
+  </div>
+</div>
+`;
