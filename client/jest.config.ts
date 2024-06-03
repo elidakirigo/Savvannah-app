@@ -19,6 +19,7 @@ const config: Config = {
 	testEnvironment: 'jsdom',
 	collectCoverage: true,
 	coverageDirectory: 'coverage',
+	"coverageReporters": [ "text-summary", "lcov" ],
 	globals: {
 		axios: require('axios'),
 		// usefetchuser,
@@ -37,6 +38,7 @@ const config: Config = {
 			lines: 35,
 			statements: 35,
 		},
+		
 	},
 }
 
