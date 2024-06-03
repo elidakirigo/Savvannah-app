@@ -4,16 +4,24 @@ import { useAlbumPhotos, usePhotos, useFetchPhotos } from '../Hooks/usePhotos'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { useAppSelector } from '../src/app/store/hooks'
+import { useState } from 'react'
+import UserData from './mocks/data'
 
-// describe('user hook fn', () => {
-// 	it('should check if the fn returns an array of users', () => {
-// 		expect(usefetchuser()).toHaveLength(3)
-// 	})
+// jest.mock('../src/app/store/hooks')
+// jest.mock('react')
 
-// 	it('should check if the fn returns an array of users', () => {
-// 		expect(useUser()).toHaveLength(3)
-// 	})
-// })
+describe('user hook fn', () => {
+	// useAppSelector.mockReturnValue(UserData)
+
+	it('should check if the fn returns an array of users', () => {
+		expect(UserData.UserData).toHaveLength(1)
+	})
+
+	it('should check if the fn returns an array of users', () => {
+		expect(UserData.user).toHaveLength(1)
+	})
+})
 // describe('album hook fn', () => {
 // 	it('should check if the fn returns an array of users', () => {
 // 		expect(useFetchPhotos()).toHaveLength(3)
