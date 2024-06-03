@@ -17,7 +17,7 @@ const createJestConfig = nextJest({
 const config: Config = {
 	coverageProvider: 'v8',
 	testEnvironment: 'jsdom',
-	collectCoverage: true,
+	// collectCoverage: true,
 	coverageDirectory: 'coverage',
 	"coverageReporters": [ "text-summary", "lcov" ],
 	globals: {
